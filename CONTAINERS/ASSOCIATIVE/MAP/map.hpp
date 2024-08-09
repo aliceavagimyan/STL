@@ -30,6 +30,10 @@ void Map<Key, Value>::insert(const Key& key, const Value& value) {
 
 template <typename Key, typename Value>
 bool Map<Key, Value>::find(const Key& key) const {
+     if (find(key)) {
+        std::cout << "Error" << std::endl;
+        return;
+    }
     Node* node = findNode(this->root, key);
     return node != nullptr;
 }
